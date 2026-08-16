@@ -36,7 +36,7 @@
       </div>
 
       <h3 class="sub-title">재료비</h3>
-      <p class="hint">재료를 산 가격과 총량, 이번 메뉴에 실제로 쓴 양을 넣으면 재료비가 자동으로 계산돼요. (구매량·사용량은 같은 단위로 입력)</p>
+      <p class="hint">재료명, 가격, 구매한 양(g 또는 ml), 이번 메뉴에 쓴 양을 넣으면 재료비가 자동으로 계산돼요. (재료량·사용량은 같은 단위로 입력)</p>
 
       <div id="ingredient-rows" class="ingredient-rows"></div>
 
@@ -124,19 +124,15 @@
       <input type="text" class="ing-name" placeholder="예: 돼지고기">
     </div>
     <div class="field">
-      <label>구매가 (원)</label>
+      <label>재료 가격 (원)</label>
       <input type="number" class="ing-price" min="0" step="1" placeholder="0">
     </div>
     <div class="field">
-      <label>구매량</label>
+      <label>재료량 (g 또는 ml)</label>
       <input type="number" class="ing-buy-qty" min="0" step="0.01" placeholder="0">
     </div>
     <div class="field">
-      <label>단위</label>
-      <input type="text" class="ing-unit" placeholder="g / ml / 개">
-    </div>
-    <div class="field">
-      <label>사용량</label>
+      <label>사용량 (g 또는 ml)</label>
       <input type="number" class="ing-use-qty" min="0" step="0.01" placeholder="0">
     </div>
     <div class="field subtotal-field">
