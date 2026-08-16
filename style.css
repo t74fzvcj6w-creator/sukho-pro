@@ -169,7 +169,7 @@ body {
 }
 .field-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 16px;
 }
 @media (max-width: 640px) {
@@ -185,7 +185,7 @@ body {
 }
 .ingredient-row {
   display: grid;
-  grid-template-columns: 2fr 1fr 0.8fr 0.7fr 0.8fr 1fr auto;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 0.7fr) minmax(0, 0.8fr) minmax(0, 1fr) auto;
   gap: 8px;
   align-items: end;
   padding: 12px;
@@ -193,7 +193,8 @@ body {
   border-radius: 10px;
   border: 1px solid var(--border);
 }
-.ingredient-row .field { margin-bottom: 0; }
+.ingredient-row .field { margin-bottom: 0; min-width: 0; }
+.ingredient-row .field input { min-width: 0; width: 100%; }
 .subtotal-field output {
   font-weight: 600;
   background: transparent;
@@ -213,11 +214,20 @@ body {
 
 @media (max-width: 720px) {
   .ingredient-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
   .row-remove {
     justify-self: end;
     grid-column: 2;
+  }
+}
+
+@media (max-width: 420px) {
+  .ingredient-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .row-remove {
+    grid-column: 1;
   }
 }
 
@@ -247,7 +257,7 @@ body {
 /* Stat tiles */
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 24px;
 }
